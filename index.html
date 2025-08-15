@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YesAuto — Mécanicien & Nettoyage auto à domicile (IDF/Oise)</title>
+  <meta name="description" content="Intervention rapide à   Île-de-France & Oise. Mécanique, diagnostic et nettoyage auto à domicile. Devis WhatsApp." />
+  <meta name="theme-color" content="#00E5FF" />
+  <style>
+    :root{
+      --bg:#0B0E12; --panel:#111827; --text:#E5E7EB; --muted:#9CA3AF;
+      --primary:#00E5FF; --primary-dark:#0096A7; --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:var(--text)}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    .section{padding:64px 0}
+    .section.alt{background:var(--panel)}
+    h1,h2,h3{line-height:1.1;margin:0 0 16px}
+    h1{font-size:clamp(32px,4vw,48px)}
+    h2{font-size:clamp(26px,3vw,34px);margin-bottom:24px}
+    h3{font-size:20px;margin-bottom:8px}
+    .small{color:var(--muted);font-size:.9rem}
+    .tiny{color:var(--muted);font-size:.8rem}
+    .center{text-align:center}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.15);transition:all .2s;box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background: radial-gradient(80% 80% at 20% 20%, var(--primary), var(--primary-dark)); color:#001015; font-weight:700}
+    .btn.outline{background:transparent}
+    .btn.small{padding:10px 14px;font-size:.95rem}
+    .btn.ghost{background:transparent;border-color:rgba(255,255,255,.25)}
+
+    .header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,14,18,.6);border-bottom:1px solid rgba(255,255,255,.05);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{height:44px;width:auto;border-radius:8px;box-shadow:0 0 18px rgba(0,229,255,.35)}
+    .brand .fallback{font-weight:900;letter-spacing:.3px}
+    .header nav a{margin-left:14px}
+
+    .hero{position:relative;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;inset:-20% -10% 0 -10%;
+      background:
+        radial-gradient(500px 200px at 10% 10%, rgba(0,229,255,.18), transparent 60%),
+        radial-gradient(700px 260px at 80% 0%, rgba(0,229,255,.10), transparent 60%);
+      filter:blur(0.2px);pointer-events:none;
+    }
+    .hero-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:40px 0 20px}
+    .glow{color:var(--primary);text-shadow:0 0 12px var(--primary),0 0 24px var(--primary)}
+    .actions{display:flex;gap:12px;margin:14px 0 6px}
+    .contact{color:var(--muted)}
+    .art{justify-self:center}
+    .art img{max-width:360px;border-radius:14px;box-shadow:0 0 40px rgba(0,229,255,.25)}
+    .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px auto 30px}
+    .badges span{border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:10px 14px;text-align:center;background:rgba(0,0,0,.25)}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card ul{margin:0;padding-left:18px}
+    .card li{margin:6px 0}
+
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price-card{background:linear-gradient(180deg, rgba(0,229,255,.06), rgba(255,255,255,.02));border:1px solid rgba(0,229,255,.22);border-radius:var(--radius);padding:18px;box-shadow:0 10px 40px rgba(0,229,255,.08)}
+    .price-card.featured{transform:scale(1.02);box-shadow:0 10px 40px rgba(0,229,255,.18)}
+    .price{font-size:1.2rem;color:#CFFAFE}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .reviews figure{margin:0;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px}
+    .reviews .stars{color:#FFD166;letter-spacing:2px;margin-bottom:6px}
+
+    .form{display:flex;flex-direction:column;gap:12px}
+    .form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .form input,.form select,.form textarea{width:100%;padding:12px 14px;border-radius:10px;background:#0F1318;border:1px solid rgba(255,255,255,.1);color:var(--text);outline:none}
+    .form input:focus,.form textarea:focus,.form select:focus{border-color:var(--primary)}
+
+    .footer{padding:30px 0;border-top:1px solid rgba(255,255,255,.07);background:#0D1116}
+    .footgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;align-items:start}
+    .links a{display:block;margin:6px 0;color:var(--muted)}
+    .legal main{min-height:60vh}
+
+    @media (max-width: 940px){
+      .hero-inner{grid-template-columns:1fr}
+      .badges{grid-template-columns:repeat(2,1fr)}
+      .cards,.pricing,.reviews{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .footgrid{grid-template-columns:1fr}
+      .art img{max-width:240px}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img src="images/logo.png" alt="YesAuto" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+        <span class="fallback" style="display:none">YesAuto</span>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#avis">Avis</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn small ghost" href="#devis">Devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="copy">
+        <h1>Mécanicien & <span class="glow">Nettoyeur auto</span> à domicile</h1>
+        <p>Intervention rapide —   IDF & Oise• Prix clairs • WhatsApp direct</p>
+        <div class="actions">
+          <a class="btn primary" href="#devis">Devis </a>
+          <a id="waTop" class="btn outline" target="_blank" rel="noopener" href="https://wa.me/33663673328?text=Bonjour%2C+je+veux+un+devis+YesAuto">WhatsApp</a>
+        </div>
+        <p class="contact">📞 06 63 67 33 28 • ✉️ <a href="mailto:Yesakdu@gmail.com">Yesakdu@gmail.com</a></p>
+      </div>
+      <div class="art">
+        <img src="logo.png" alt="Logo YesAuto" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="badges container">
+      <span>🚗 Entretien & diagnostic</span>
+      <span>🧼 Nettoyage intérieur</span>
+      <span>🕒 6j/7 </span>
+      <span>📍 Paris & Île-de-France</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section container">
+    <h2>Services</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Maintenance & Diagnostic</h3>
+        <ul>
+          <li>Vidange & filtres</li>
+          <li>Freins (plaquettes/disques)</li>
+          <li>Diagnostic OBD & effacement défauts</li>
+          <li>Démarrage/booster, batterie</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Réparations courantes</h3>
+        <ul>
+          <li>Amortisseurs, biellettes, rotules</li>
+          <li>Courroie accessoire</li>
+          <li> Tout autres service...</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Nettoyage Auto</h3>
+        <ul>
+          <li>Intérieur : aspiration, plastiques, vitres</li>
+          <li>Netoyage des tissus</li>
+          <li>Désinfection à la vapeur (option)</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section id="tarifs" class="section alt">
+    <div class="container">
+      <h2>Tarifs</h2>
+      <div class="pricing">
+        <!-- Formules nettoyage inspirées du plan (sans temps) -->
+        <div class="price-card">
+          <h3>🚿 Formule Express</h3>
+          <p class="price"><strong>49€</strong></p>
+          <ul>
+            <li>Retrait tapis/objets + aspiration rapide</li>
+            <li>Nettoyage plastiques</li>
+            <li>Vitrages intérieurs + parfum léger</li>
+          </ul>
+          <a class="btn small" href="#devis" data-pack="Formule Express">Réserver</a>
+        </div>
+
+        <div class="price-card featured">
+          <h3>✨ Formule Complet</h3>
+          <p class="price"><strong>79€</strong></p>
+          <ul>
+            <li>Retrait tapis/objets + aspiration complète</li>
+            <li>Plastiques (traitement anti-UV)</li>
+            <li>Grilles d’aération + vitres intérieures</li>
+            <li>Désodorisation</li>
+          </ul>
+          <a class="btn small" href="#devis" data-pack="Formule Complet">Réserver</a>
+        </div>
+
+        <div class="price-card">
+          <h3>💎 Formule Premium</h3>
+          <p class="price"><strong>119€</strong></p>
+          <ul>
+            <li>Shampouinage sièges & moquettes</li>
+            <li>Plastiques + grilles d’aération</li>
+            <li>Vitres + traitement anti-odeur antibactérien</li>
+          </ul>
+          <a class="btn small" href="#devis" data-pack="Formule Premium">Réserver</a>
+        </div>
+      </div>
+
+      <p class="small center">🫧 Option : Désinfection vapeur 🦠 (+20€) — volant, poignées, boutons, ceintures, sièges.
+</p>
+
+      <!-- Carte Mécanique sans prix ni détails -->
+      <div class="pricing" style="margin-top:22px">
+        <div class="price-card" style="grid-column:1/-1">
+          <h3>🔧 Mécanique</h3>
+          <p class="small">Sur devis — intervention à domicile (Paris & IDF)</p>
+          <a class="btn small" href="#devis" data-pack="Mécanique">Demander un devis</a>
+        </div>
+      </div>
+
+      <p class="small center">Devis Gratuit </p>
+    </div>
+  </section>
+
+  <!-- AVIS AVEC ÉTOILES -->
+  <section id="avis" class="section container">
+    <h2>Avis clients</h2>
+    <div class="reviews">
+      <figure>
+        <div class="stars">★★★★★</div>
+        <blockquote>J’ai fait appel à YesAuto pour une intervention à domicile et je suis extrêmement satisfait du service ! Ponctuel, professionnel et très sympathique, il a pris le temps d’expliquer clairement les réparations effectuées. Le travail a été réalisé rapidement, avec soin, et à un tarif très raisonnable. C’est vraiment appréciable de pouvoir faire réparer son véhicule directement chez soi, sans perte de temps. Je recommande vivement ses services et je n’hésiterai pas à le recontacter pour mes futurs besoins mécaniques.</blockquote>
+        <figcaption>— Jordan</figcaption>
+      </figure>
+      <figure>
+        <div class="stars">★★★★★</div>
+        <blockquote>Professionnalisme assurée, joignable et rapidité d’exécution, je conseille vraiment ce mécanicien . Vous pouvez y aller les yeux fermer !</blockquote>
+        <figcaption>— Luka</figcaption>
+      </figure>
+      <figure>
+        <div class="stars">★★★★☆</div>
+        <blockquote>Diagnostic clair et prix honnêtes. Top.</blockquote>
+        <figcaption>— Philippe</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DEVIS -->
+  <section id="devis" class="section alt">
+    <div class="container">
+      <h2>Devis & Réservation</h2>
+      <form id="quoteForm" class="form" onsubmit="submitQuote(event)">
+        <div class="form-grid">
+          <label>Nom
+            <input required name="nom" placeholder="Votre nom">
+          </label>
+          <label>Téléphone
+            <input required name="tel" placeholder="06…" pattern="^[0-9 +().-]{6,}$">
+          </label>
+          <label>E-mail
+            <input name="email" type="email" placeholder="vous@exemple.fr">
+          </label>
+          <label>Ville (IDF/Oise)
+            <input required name="ville" placeholder="Ex : Saint-Denis">
+          </label>
+<label>Immatriculation
+  <input name="immatriculation" placeholder="Ex : AB-123-CD">
+</label>
+          <label>Service
+            <select name="service" id="serviceSelect">
+              <option>Formule Express</option>
+              <option>Formule Complet</option>
+              <option>Formule Premium</option>
+              <option>Mécanique</option>
+            </select>
+          </label>
+<label>Plage de dates souhaitée</label>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+  <input name="date_debut" type="date" style="flex:1" placeholder="Du">
+  <input name="date_fin" type="date" style="flex:1" placeholder="Au">
+</div>
+        </div>
+        <label>Détail de la demande
+          <textarea name="details" rows="4" placeholder="Modèle, immatriculation (option), symptômes, options de nettoyage…"></textarea>
+        </label>
+        <div class="actions">
+          <button class="btn primary" type="submit">Envoyer la demande</button>
+          <!-- Ce bouton WhatsApp se masque si 'Mécanique' est choisi -->
+          <a id="waAlt" class="btn outline" target="_blank" rel="noopener"
+             href="https://wa.me/33663673328?text=Bonjour%2C+je+veux+un+devis+YesAuto">Ou WhatsApp</a>
+        </div>
+        <p class="small">En envoyant, vous acceptez d'être recontacté par téléphone/SMS/WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section container">
+    <h2>FAQ</h2>
+    <details><summary>Vous vous déplacez où ?</summary><p>IDF et Oise .</p></details>
+    <details><summary>Quels moyens de paiement ?</summary><p>CB, espèces, virement. Facture fournie sur demande </p></details>
+    <details><summary>Faites-vous la vapeur ?</summary><p>Oui, en option. Nettoyage doux, produits pro, finitions soignées.</p></details>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footgrid">
+      <div>
+        <strong style="font-size:1.1rem">YesAuto</strong><br />
+        <span class="small">  Île-de-France & Oise </span>
+      </div>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#devis">Devis</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/33663673328" target="_blank" rel="noopener">WhatsApp</a>
+        <p class="small">📞 06 63 67 33 28<br>✉️ <a href="mailto:Yesakdu@gmail.com">Yesakdu@gmail.com</a></p>
+      </div>
+    </div>
+    <p class="tiny center">© <span id="year"></span> YesAuto. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Pré-remplir service depuis les cartes
+    document.querySelectorAll('[data-pack]').forEach(b=>{
+      b.addEventListener('click',()=>{
+        const sel=document.getElementById('serviceSelect');
+        if(sel){ sel.value=b.getAttribute('data-pack'); sel.dispatchEvent(new Event('change')); }
+        document.getElementById('quoteForm')?.scrollIntoView({behavior:'smooth'});
+      });
+    });
+
+    // Masquer/afficher le bouton WhatsApp selon service choisi
+    const serviceSelect=document.getElementById('serviceSelect');
+    const waAlt=document.getElementById('waAlt');
+    const waTop=document.getElementById('waTop');
+    function refreshWA(){
+      const isMeca = serviceSelect.value === 'Mécanique';
+      if(waAlt) waAlt.style.display = isMeca ? 'none' : 'inline-block';
+      // On laisse le bouton WhatsApp du hero (waTop) toujours visible pour contact général
+    }
+    serviceSelect.addEventListener('change', refreshWA);
+    refreshWA();
+
+    // Envoi WhatsApp du formulaire (toujours)
+    function submitQuote(e){
+      e.preventDefault();
+      const data=Object.fromEntries(new FormData(e.target).entries());
+      const msg = `Bonjour, je souhaite un devis YesAuto:
+Nom: ${data.nom}
+Tel: ${data.tel}
+Email: ${data.email||'-'}
+Ville: ${data.ville}
+Immatriculation: ${data.immatriculation}
+Service: ${data.service}
+Date: ${data.date||'à convenir'}
+Détails: ${data.details||'-'}`;
+      const url=`https://wa.me/33663673328?text=${encodeURIComponent(msg)}`;
+      window.open(url,'_blank');
+      alert("Merci ! Je te réponds rapidement sur WhatsApp / téléphone.");
+      e.target.reset();
+      refreshWA();
+    }
+
+    // Année dynamique
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
