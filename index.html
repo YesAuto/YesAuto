@@ -68,8 +68,12 @@
     .art{justify-self:center}
     .art img{max-width:360px;border-radius:14px;box-shadow:0 0 40px rgba(0,229,255,.25)}
     .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px auto 30px}
- .badges span {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.badges span {
+  display: flex;
+  align-items: center;     /* centre verticalement */
+  justify-content: center; /* centre horizontalement */
+  gap: 6px;                 /* espace entre l’emoji et le texte */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   padding: 10px 14px;
   text-align: center;
