@@ -42,7 +42,17 @@
     .brand img{height:44px;width:auto;border-radius:8px;box-shadow:0 0 18px rgba(0,229,255,.35)}
     .brand .fallback{font-weight:900;letter-spacing:.3px}
     .header nav a{margin-left:14px}
-
+.header nav a.devis {
+  background: var(--primary);
+  color: #001015;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+.header nav a.devis:hover {
+  background: var(--primary-dark);
+}
     .hero{position:relative;overflow:hidden}
     .hero::before{
       content:"";position:absolute;inset:-20% -10% 0 -10%;
@@ -115,7 +125,7 @@
         <a href="#tarifs">Tarifs</a>
         <a href="#avis">Avis</a>
         <a href="#faq">FAQ</a>
-        <a class="btn small ghost" href="#devis">Devis</a>
+<a class="btn small ghost devis" href="#devis">Devis</a>
       </nav>
     </div>
   </header>
